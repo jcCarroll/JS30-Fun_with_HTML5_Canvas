@@ -28,6 +28,9 @@
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
     </script>
 
     <style>
