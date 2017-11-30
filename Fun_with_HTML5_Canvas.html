@@ -11,6 +11,8 @@
     <script>
         const canvas = document.querySelector('#draw'); // This grabs the canvas by the id
         const ctx = canvas.getContext('2d'); // Gets the 2d context where we will be drawing
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     </script>
 
     <style>
