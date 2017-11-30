@@ -21,6 +21,12 @@
         // Variables to show where the line is starting and ending
         let lastX = 0;
         let lastY = 0;
+
+        function draw(e) {
+            console.log(e);
+        };
+
+        canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
     </script>
 
     <style>
