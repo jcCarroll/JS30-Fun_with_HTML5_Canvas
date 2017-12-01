@@ -25,12 +25,18 @@
         function draw(e) {
             if (!isDrawing) return; // stop the fn from running when they are not moused down
             console.log(e);
+            ctx.beginPath();
+            // next two lines start up the line/draw
+            ctx.moveTo(lastX, lastY); // starts the draw
+            ctx.lineTo(e.offsetX, e.offsetY); // ends the draw
+            // you will not see anything until stroke is called
+            ctx.stroke();
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
         canvas.addEventListener('mousedown', () => isDrawing = true);
         canvas.addEventListener('mouseup', () => isDrawing = false);
-        canvas.addEventListener('mouseout', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false); // Covers when you leave the window with mouse down and return with mouse up
     </script>
 
     <style>
