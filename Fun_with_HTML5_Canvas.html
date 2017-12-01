@@ -29,7 +29,6 @@
             if (!isDrawing) return; // stop the fn from running when they are not moused down
             console.log(e);
             ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // http://mothereffinghsl.com/ is used for color and we set hue as the color being used. Set up hsl(hue, saturation, lightness)
-            ctx.lineWidth = hue; // to change the width of the line to the same as hue number
             ctx.beginPath();
             // next two lines start up the line/draw
             // start from
@@ -48,6 +47,16 @@
             hue++; // increments throught the colors
             if (hue >= 306) { // resets hue to 0 after reaching 360. Not needed
                 hue = 0;
+            }
+
+            if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) { // if lineWidth is greater than 100 or less than 1 flip the direction
+                direction = !direction;
+            }
+
+            if (direction) {
+                ctx.lineWidth++;
+            } else {
+                ctx.lineWidth--;
             }
         };
 
