@@ -16,11 +16,13 @@
         ctx.strokeStyle = '#BADA55'; // Setting the color
         ctx.lineJoin = 'round'; // Tells the line to be rounded when it joins another line
         ctx.lineCap = 'round'; // Tells line start and line end to be rounded
+        ctx.lineWidth = 100; // Sets the thickness of the line
 
         let isDrawing = false; // Flag set to keep mouse from drawing when it is not clicked
         // Variables to show where the line is starting and ending
         let lastX = 0;
         let lastY = 0;
+        let hue = 0;
 
         function draw(e) {
             if (!isDrawing) return; // stop the fn from running when they are not moused down
