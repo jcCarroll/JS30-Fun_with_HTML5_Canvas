@@ -42,7 +42,11 @@
 
             // the two lines above were cut down to below
             [lastX, lastY] = [e.offsetX, e.offsetY];
+
             hue++; // increments throught the colors
+            if (hue >= 306) { // resets hue to 0 after reaching 360. Not needed
+                hue = 0;
+            }
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
