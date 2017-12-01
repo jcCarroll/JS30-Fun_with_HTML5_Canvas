@@ -42,6 +42,7 @@
 
             // the two lines above were cut down to below
             [lastX, lastY] = [e.offsetX, e.offsetY];
+            hue++; // increments throught the colors
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
