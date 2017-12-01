@@ -27,10 +27,18 @@
             console.log(e);
             ctx.beginPath();
             // next two lines start up the line/draw
+            // start from
             ctx.moveTo(lastX, lastY); // starts the draw
+            // go to
             ctx.lineTo(e.offsetX, e.offsetY); // ends the draw
             // you will not see anything until stroke is called
             ctx.stroke();
+
+            // lastX = e.offsetX;
+            // lastY = e.offsetY;
+
+            // the two lines above were cut down to below
+            [lastX, lastY] = [e.offsetX, e.offsetY];
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
