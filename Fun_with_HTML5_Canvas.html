@@ -27,6 +27,7 @@
         function draw(e) {
             if (!isDrawing) return; // stop the fn from running when they are not moused down
             console.log(e);
+            ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`; // http://mothereffinghsl.com/ is used for color and we set hue as the color being used. Set up hsl(hue, saturation, lightness)
             ctx.beginPath();
             // next two lines start up the line/draw
             // start from
