@@ -42,7 +42,10 @@
         };
 
         canvas.addEventListener('mousemove', draw); // Listening for mouse movement on the canvas
-        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mousedown', (e) => { // needed to add a block to this function to be able to update last x and last y
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
         canvas.addEventListener('mouseup', () => isDrawing = false);
         canvas.addEventListener('mouseout', () => isDrawing = false); // Covers when you leave the window with mouse down and return with mouse up
     </script>
