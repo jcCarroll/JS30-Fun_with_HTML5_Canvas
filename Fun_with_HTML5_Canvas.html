@@ -17,6 +17,7 @@
         ctx.lineJoin = 'round'; // Tells the line to be rounded when it joins another line
         ctx.lineCap = 'round'; // Tells line start and line end to be rounded
         ctx.lineWidth = 100; // Sets the thickness of the line
+        ctx.globalCompositeOperation = 'multiply';
 
         let isDrawing = false; // Flag set to keep mouse from drawing when it is not clicked
         // Variables to show where the line is starting and ending
